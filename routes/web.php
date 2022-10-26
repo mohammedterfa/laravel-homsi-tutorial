@@ -23,5 +23,12 @@ Route::get('/about', function () {
 
 Route::get('/store', function (){
     $filter = request('style');
-    return 'store'.$filter.'';
+    if(isset($filter)){
+
+    return 'store '.$filter.'';
+
+    }
+    else{
+        return 'انت شايف كل الحاجات يا حبيبنا من غير فلترة';
+    }
 });
